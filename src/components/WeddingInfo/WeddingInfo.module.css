@@ -1,0 +1,37 @@
+.weddingInfo {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.infoRow {
+  display: flex;
+  padding: 12px 0;
+  border-bottom: 1px solid #F0E6DD;
+}
+
+.infoRow:last-child {
+  border-bottom: none;
+}
+
+.infoLabel {
+  width: 100px;
+  font-weight: 600;
+  color: #5A0F1A;
+}
+
+.infoValue {
+  flex: 1;
+  color: #6B6B6B;
+}
+
+@media (max-width: 768px) {
+  .infoRow {
+    flex-direction: column;
+  }
+  
+  .infoLabel {
+    margin-bottom: 5px;
+  }
+}

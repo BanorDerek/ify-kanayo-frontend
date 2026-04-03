@@ -1,0 +1,763 @@
+.details {
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 60vh;
+  min-height: 500px;
+  background: linear-gradient(135deg, #5A0F1A 0%, #8B2C3A 50%, #5A0F1A 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.3) 100%);
+}
+
+.heroPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L35 15 L30 25 L25 15 Z M30 35 L35 45 L30 55 L25 45 Z' fill='%23D8A7A0' fill-opacity='0.05'/%3E%3C/svg%3E");
+  animation: floatPattern 20s ease-in-out infinite;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.heroTag {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  background: rgba(255,255,255,0.2);
+  padding: 6px 18px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.heroContent h1 {
+  font-size: 3.5rem;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 15px;
+  letter-spacing: -0.02em;
+  color: #C6A75E;
+}
+
+.heroContent p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  margin-bottom: 25px;
+  color: #C6A75E;
+}
+
+.heroDate {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255,255,255,0.15);
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-size: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.heroScroll {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.heroScroll span {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  opacity: 0.8;
+}
+
+.scrollArrow {
+  width: 20px;
+  height: 20px;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(45deg);
+  margin: 0 auto;
+  animation: bounce 1.5s infinite;
+}
+
+/* Tab Section */
+.tabSection {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #fff 0%, #F7EFE5 100%);
+}
+
+.tabButtons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.tabBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  background: white;
+  border: 2px solid #D8A7A0;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #5A0F1A;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.tabIcon {
+  font-size: 18px;
+}
+
+.tabBtn:hover {
+  background: #D8A7A0;
+  color: white;
+  transform: translateY(-2px);
+  border-color: #D8A7A0;
+}
+
+.tabBtn.active {
+  background: #D8A7A0;
+  color: white;
+  border-color: #D8A7A0;
+  box-shadow: 0 5px 15px rgba(216, 167, 160, 0.3);
+}
+
+.tabContent {
+  animation: fadeIn 0.5s ease;
+}
+
+/* Info Card */
+.infoCard {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 50px;
+  background: white;
+  border-radius: 30px;
+  overflow: hidden;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.infoCardLeft {
+  position: relative;
+  background: linear-gradient(135deg, #F7EFE5, #fff);
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+}
+
+.infoIcon {
+  font-size: 80px;
+  color: #C6A75E;
+  animation: gentleFloat 3s ease-in-out infinite;
+}
+
+.infoDecoration {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #D8A7A0, transparent);
+}
+
+.infoCardRight {
+  padding: 50px 50px 50px 0;
+}
+
+.infoCardRight h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #5A0F1A;
+  margin-bottom: 25px;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  color: #2B2B2B;
+}
+
+.infoIconSmall {
+  color: #D8A7A0;
+  font-size: 18px;
+}
+
+.address {
+  color: #6B6B6B;
+  margin: 15px 0 15px 30px;
+  font-size: 0.95rem;
+}
+
+.description {
+  line-height: 1.8;
+  color: #6B6B6B;
+  margin: 20px 0;
+}
+
+.dressCodeCard {
+  margin: 25px 0;
+  padding: 20px;
+  background: #F7EFE5;
+  border-radius: 16px;
+  border-left: 4px solid #C6A75E;
+}
+
+.dressLabel {
+  font-weight: 700;
+  color: #5A0F1A;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.dressValue {
+  color: #C6A75E;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.dressHint {
+  font-size: 0.85rem;
+  color: #6B6B6B;
+  margin-top: 8px;
+}
+/* Humor Note Styles */
+.humorNote {
+  margin-top: 15px;
+  padding: 12px 15px;
+  background: linear-gradient(135deg, #FFF9F0, #FFF5E8);
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border: 1px solid #F0E6DD;
+}
+
+.humorIcon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.humorText {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #8B6B4A;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.mapBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 12px 32px;
+  background: #D8A7A0;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.mapBtn:hover {
+  background: #5A0F1A;
+  transform: translateX(5px);
+  gap: 12px;
+}
+
+.specialNote {
+  background: linear-gradient(135deg, #F7EFE5, #fff);
+  padding: 20px;
+  border-radius: 16px;
+  margin: 20px 0;
+  text-align: center;
+  font-style: italic;
+  color: #5A0F1A;
+  border: 1px solid #D8A7A0;
+}
+
+/* Schedule Card */
+.scheduleCard {
+  background: white;
+  border-radius: 30px;
+  padding: 50px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.scheduleCard h2 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  color: #5A0F1A;
+  margin-bottom: 10px;
+}
+
+.scheduleSubtitle {
+  text-align: center;
+  color: #D8A7A0;
+  margin-bottom: 50px;
+}
+
+.timeline {
+  position: relative;
+}
+
+.timelineItem {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 35px;
+  position: relative;
+}
+
+.timelineIcon {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: #F7EFE5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #C6A75E;
+  font-size: 24px;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.timelineDot {
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 35px;
+  background: linear-gradient(180deg, #D8A7A0, transparent);
+}
+
+.timelineContent {
+  flex: 1;
+  padding-bottom: 10px;
+}
+
+.timelineTime {
+  font-weight: 700;
+  color: #5A0F1A;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+.timelineEvent {
+  font-weight: 600;
+  color: #2B2B2B;
+  margin-bottom: 5px;
+}
+
+.timelineDescription {
+  font-size: 0.85rem;
+  color: #6B6B6B;
+}
+
+/* Practical Grid */
+.practicalGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.practicalCard {
+  background: white;
+  border-radius: 20px;
+  padding: 35px;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.practicalCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.practicalIconWrapper {
+  width: 80px;
+  height: 80px;
+  background: #F7EFE5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 40px;
+  color: #C6A75E;
+  transition: all 0.3s ease;
+}
+
+.practicalCard:hover .practicalIconWrapper {
+  background: #D8A7A0;
+  color: white;
+  transform: scale(1.1);
+}
+
+.practicalCard h3 {
+  color: #5A0F1A;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.practicalCard p {
+  color: #6B6B6B;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.practicalDetail {
+  padding-top: 15px;
+  border-top: 1px solid #F0E6DD;
+}
+
+.practicalDetail small {
+  color: #D8A7A0;
+  font-size: 0.8rem;
+}
+
+/* CTA Section */
+.ctaSection {
+  position: relative;
+  padding: 80px 0;
+  background: linear-gradient(135deg, #5A0F1A 0%, #8B2C3A 100%);
+  color: white;
+  overflow: hidden;
+}
+
+.ctaPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 20% 40%, rgba(255,255,255,0.05) 2px, transparent 2px);
+  background-size: 30px 30px;
+}
+
+.ctaContent {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.ctaContent h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #C6A75E;
+}
+
+.ctaContent p {
+  font-size: 1.1rem;
+  margin-bottom: 35px;
+  opacity: 0.9;
+  color: #C6A75E;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.rsvpBtn {
+  display: inline-block;
+  padding: 14px 40px;
+  background: #ffffff;
+  color: #5A0F1A;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.rsvpBtn:hover {
+  background: #C6A75E;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.giftBtn {
+  display: inline-block;
+  padding: 14px 40px;
+  background: transparent;
+  color: #C6A75E;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  border: 2px solid #C6A75E;
+  transition: all 0.3s ease;
+}
+
+.giftBtn:hover {
+  background: #C6A75E;
+  color: #5A0F1A;
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: rotate(45deg) translate(0, 0);
+  }
+  50% {
+    transform: rotate(45deg) translate(8px, 8px);
+  }
+}
+
+@keyframes floatPattern {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(2%, 2%);
+  }
+}
+
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .infoCard {
+    grid-template-columns: 1fr;
+  }
+  
+  .infoCardLeft {
+    padding: 40px;
+  }
+  
+  .infoCardRight {
+    padding: 0 40px 40px 40px;
+  }
+  
+  .practicalGrid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+  }
+  
+  .heroContent h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 450px;
+  }
+  
+  .heroContent h1 {
+    font-size: 2rem;
+  }
+  
+  .heroContent p {
+    font-size: 1rem;
+  }
+  
+  .tabSection {
+    padding: 50px 0;
+  }
+  
+  .tabButtons {
+    gap: 12px;
+  }
+  
+  .tabBtn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+  
+  .tabIcon {
+    font-size: 14px;
+  }
+  
+  .infoCardRight {
+    padding: 0 25px 30px 25px;
+  }
+  
+  .infoCardRight h2 {
+    font-size: 1.5rem;
+  }
+  
+  .scheduleCard {
+    padding: 30px;
+  }
+  
+  .timelineItem {
+    gap: 15px;
+  }
+  
+  .timelineIcon {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+  
+  .practicalGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .ctaContent h2 {
+    font-size: 1.8rem;
+  }
+  
+  .ctaButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .rsvpBtn, .giftBtn {
+    width: 250px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent h1 {
+    font-size: 1.5rem;
+  }
+  
+  .heroDate {
+    font-size: 0.85rem;
+    padding: 8px 18px;
+  }
+  
+  .tabButtons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .tabBtn {
+    justify-content: center;
+  }
+  
+  .timelineItem {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .timelineIcon {
+    margin-bottom: 10px;
+  }
+  
+  .timelineDot {
+    display: none;
+  }
+}
+/* Add these new styles to your existing CSS */
+
+.weatherNote {
+  margin: 20px 0;
+  padding: 15px;
+  background: #FFF9F0;
+  border-radius: 12px;
+  border-left: 4px solid #F5A623;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.weatherIcon {
+  font-size: 24px;
+}
+
+.timelineLocation {
+  margin-top: 8px;
+}
+
+.locationBadge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: #F7EFE5;
+  border-radius: 20px;
+  font-size: 11px;
+  color: #D8A7A0;
+  font-weight: 500;
+}
+
+/* Update tab button text for mobile */
+@media (max-width: 768px) {
+  .tabBtn {
+    font-size: 0.8rem;
+  }
+  
+  .weatherNote {
+    font-size: 0.85rem;
+  }
+}

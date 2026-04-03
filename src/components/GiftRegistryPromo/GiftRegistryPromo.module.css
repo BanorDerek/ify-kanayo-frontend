@@ -1,0 +1,144 @@
+.promo {
+  background: linear-gradient(135deg, #D8A7A0 0%, #C6A75E 100%);
+  border-radius: 20px;
+  padding: 40px;
+  margin: 40px 0;
+  position: relative;
+  overflow: hidden;
+  animation: glow 2s ease-in-out infinite;
+}
+
+.promo::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  animation: rotate 10s linear infinite;
+}
+
+.promoContent {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.iconWrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.icon {
+  font-size: 48px;
+  color: white;
+}
+
+.heartIcon {
+  position: absolute;
+  top: -10px;
+  right: -20px;
+  font-size: 24px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.promoContent h3 {
+  color: white;
+  font-size: 28px;
+  margin-bottom: 15px;
+  font-family: 'Playfair Display', serif;
+}
+
+.promoContent p {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 16px;
+  margin-bottom: 20px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.options span {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 30px;
+  color: white;
+  font-size: 14px;
+  backdrop-filter: blur(5px);
+}
+
+.promoBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  color: #5A0F1A;
+  padding: 12px 30px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.promoBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  gap: 15px;
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(198, 167, 94, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(198, 167, 94, 0.6);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@media (max-width: 768px) {
+  .promo {
+    padding: 30px 20px;
+  }
+  
+  .promoContent h3 {
+    font-size: 24px;
+  }
+  
+  .options {
+    gap: 10px;
+  }
+  
+  .options span {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}

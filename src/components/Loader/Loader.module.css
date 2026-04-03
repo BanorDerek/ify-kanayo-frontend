@@ -1,0 +1,177 @@
+.loaderContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0a0a0a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 0.8s ease-out 2.5s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.ringWrapper {
+  text-align: center;
+  position: relative;
+}
+
+.ring {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 30px;
+}
+
+.ringInner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 3px solid transparent;
+  border-top: 3px solid #D8A7A0;
+  border-right: 3px solid #D8A7A0;
+  border-radius: 50%;
+  animation: spin 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+
+.ring::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 2px solid transparent;
+  border-bottom: 2px solid #C6A75E;
+  border-left: 2px solid #C6A75E;
+  border-radius: 50%;
+  animation: spinReverse 1.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+
+.diamond {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: #D8A7A0;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinReverse {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+    background: #C6A75E;
+  }
+}
+
+.sparkles {
+  position: relative;
+  margin-top: 20px;
+}
+
+.sparkle1, .sparkle2, .sparkle3 {
+  position: absolute;
+  font-size: 20px;
+  animation: float 2s ease-in-out infinite;
+  opacity: 0;
+}
+
+.sparkle1 {
+  left: -30px;
+  top: 0;
+  animation-delay: 0s;
+}
+
+.sparkle2 {
+  right: -30px;
+  top: -20px;
+  animation-delay: 0.5s;
+}
+
+.sparkle3 {
+  left: 50%;
+  bottom: -40px;
+  transform: translateX(-50%);
+  animation-delay: 1s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.5;
+  }
+}
+
+.loadingText {
+  margin-top: 60px;
+  color: #D8A7A0;
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 300;
+  animation: fadeInOut 1.5s ease-in-out infinite;
+}
+
+.coupleName {
+  margin-top: 15px;
+  color: #C6A75E;
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  font-family: serif;
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}

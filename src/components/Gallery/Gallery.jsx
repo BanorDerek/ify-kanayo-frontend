@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import styles from './Gallery.module.css';
 
 // Import local images
-import loveStory1 from '../../assets/images/gallery/love-story-1.png';
-import loveStory2 from '../../assets/images/gallery/love-story-2.png';
-import loveStory3 from '../../assets/images/gallery/love-story-3.png';
+import loveStory1 from '../../assets/images/gallery/love-story-1.jpg';
+import loveStory2 from '../../assets/images/gallery/love-story-2.jpg';
+import loveStory3 from '../../assets/images/gallery/love-story-3.jpg';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);

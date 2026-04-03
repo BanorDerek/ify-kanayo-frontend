@@ -6,7 +6,7 @@ import styles from './Home.module.css';
 import CountdownTimer from '../../components/CountdownTimer/CountdownTimer';
 import Gallery from '../../components/Gallery/Gallery';
 import GiftRegistryPromo from '../../components/GiftRegistryPromo/GiftRegistryPromo';
-import couplePhoto from '../../assets/images/couple/couple-1.jpeg';
+import couplePhoto from '../../assets/images/couple/couple-1.jpg';
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState({});

@@ -517,9 +517,7 @@ const Home = () => {
               <Link to="/gift-registry" className="btn btn-secondary">
                 View Gift Registry
               </Link>
-              <Link to="/wedding-memories" className="btn btn-secondary">
-                Share Your Memories
-              </Link>
+           
             </div>
           </div>
         </div>

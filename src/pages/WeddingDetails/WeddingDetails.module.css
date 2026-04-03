@@ -1,3 +1,5 @@
+/* WeddingDetails.module.css - Updated Mature Tab Design */
+
 .details {
   overflow-x: hidden;
 }
@@ -43,13 +45,14 @@
 
 .heroTag {
   display: inline-block;
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  background: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.15);
   padding: 6px 18px;
   border-radius: 30px;
   margin-bottom: 20px;
+  font-weight: 400;
 }
 
 .heroContent h1 {
@@ -58,24 +61,27 @@
   margin-bottom: 15px;
   letter-spacing: -0.02em;
   color: #C6A75E;
+  font-weight: 500;
 }
 
 .heroContent p {
-  font-size: 1.2rem;
-  opacity: 0.95;
+  font-size: 1.1rem;
+  opacity: 0.9;
   margin-bottom: 25px;
-  color: #C6A75E;
+  color: #E8D5C0;
+  font-weight: 300;
 }
 
 .heroDate {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.1);
   padding: 10px 24px;
   border-radius: 50px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   backdrop-filter: blur(10px);
+  letter-spacing: 0.5px;
 }
 
 .heroScroll {
@@ -90,110 +96,123 @@
 
 .heroScroll span {
   display: block;
-  font-size: 11px;
+  font-size: 10px;
   letter-spacing: 2px;
   margin-bottom: 8px;
-  opacity: 0.8;
+  opacity: 0.7;
+  text-transform: uppercase;
 }
 
 .scrollArrow {
   width: 20px;
   height: 20px;
-  border-right: 2px solid white;
-  border-bottom: 2px solid white;
+  border-right: 1.5px solid rgba(255,255,255,0.8);
+  border-bottom: 1.5px solid rgba(255,255,255,0.8);
   transform: rotate(45deg);
   margin: 0 auto;
   animation: bounce 1.5s infinite;
 }
 
-/* Tab Section */
+/* Tab Section - Mature & Elegant */
 .tabSection {
   padding: 80px 0;
-  background: linear-gradient(135deg, #fff 0%, #F7EFE5 100%);
+  background: #FAF7F2;
 }
 
 .tabButtons {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 8px;
   margin-bottom: 60px;
   flex-wrap: wrap;
+  background: #FFFFFF;
+  padding: 8px;
+  border-radius: 60px;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
 .tabBtn {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 32px;
-  background: white;
-  border: 2px solid #D8A7A0;
+  padding: 12px 28px;
+  background: transparent;
+  border: none;
   border-radius: 50px;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #5A0F1A;
+  font-size: 0.85rem;
+  font-weight: 450;
+  letter-spacing: 0.3px;
+  color: #6B6B6B;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+  transition: all 0.25s ease;
+  font-family: inherit;
 }
 
 .tabIcon {
-  font-size: 18px;
+  font-size: 16px;
+  opacity: 0.7;
 }
 
 .tabBtn:hover {
-  background: #D8A7A0;
-  color: white;
-  transform: translateY(-2px);
-  border-color: #D8A7A0;
+  background: #F5F0E8;
+  color: #5A0F1A;
 }
 
 .tabBtn.active {
-  background: #D8A7A0;
-  color: white;
-  border-color: #D8A7A0;
-  box-shadow: 0 5px 15px rgba(216, 167, 160, 0.3);
+  background: #5A0F1A;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(90, 15, 26, 0.15);
+}
+
+.tabBtn.active .tabIcon {
+  opacity: 1;
 }
 
 .tabContent {
-  animation: fadeIn 0.5s ease;
+  animation: fadeIn 0.4s ease;
 }
 
-/* Info Card */
+/* Info Card - Refined */
 .infoCard {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 50px;
+  gap: 40px;
   background: white;
-  border-radius: 30px;
+  border-radius: 24px;
   overflow: hidden;
   max-width: 1000px;
   margin: 0 auto;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.06);
 }
 
 .infoCardLeft {
   position: relative;
-  background: linear-gradient(135deg, #F7EFE5, #fff);
+  background: #FCF9F6;
   padding: 50px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-width: 200px;
+  border-right: 1px solid #EAE3D9;
 }
 
 .infoIcon {
-  font-size: 80px;
-  color: #C6A75E;
+  font-size: 72px;
+  color: #9B7B5C;
   animation: gentleFloat 3s ease-in-out infinite;
 }
 
 .infoDecoration {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #D8A7A0, transparent);
+  bottom: 30px;
+  left: 30px;
+  right: 30px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #D4C5B2, transparent);
 }
 
 .infoCardRight {
@@ -202,86 +221,81 @@
 
 .infoCardRight h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  color: #5A0F1A;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #2C2C2C;
   margin-bottom: 25px;
+  letter-spacing: -0.3px;
 }
 
 .infoRow {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 15px;
-  color: #2B2B2B;
-}
-
-.infoIconSmall {
-  color: #D8A7A0;
-  font-size: 18px;
-}
-
-.address {
-  color: #6B6B6B;
-  margin: 15px 0 15px 30px;
+  margin-bottom: 14px;
+  color: #4A4A4A;
   font-size: 0.95rem;
 }
 
+.infoIconSmall {
+  color: #9B7B5C;
+  font-size: 16px;
+}
+
+.address {
+  color: #7A7A7A;
+  margin: 12px 0 12px 30px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
 .description {
-  line-height: 1.8;
+  line-height: 1.7;
   color: #6B6B6B;
   margin: 20px 0;
+  font-size: 0.95rem;
 }
 
 .dressCodeCard {
   margin: 25px 0;
-  padding: 20px;
-  background: #F7EFE5;
+  padding: 20px 24px;
+  background: #FCF9F6;
   border-radius: 16px;
-  border-left: 4px solid #C6A75E;
+  border-left: 3px solid #9B7B5C;
 }
 
 .dressLabel {
-  font-weight: 700;
-  color: #5A0F1A;
+  font-weight: 500;
+  color: #2C2C2C;
   display: block;
   margin-bottom: 8px;
+  font-size: 0.85rem;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
 }
 
 .dressValue {
-  color: #C6A75E;
-  font-weight: 600;
+  color: #9B7B5C;
+  font-weight: 450;
   display: block;
   margin-bottom: 10px;
+  font-size: 0.9rem;
 }
 
 .dressHint {
-  font-size: 0.85rem;
-  color: #6B6B6B;
+  font-size: 0.8rem;
+  color: #7A7A7A;
   margin-top: 8px;
 }
-/* Humor Note Styles */
-.humorNote {
-  margin-top: 15px;
-  padding: 12px 15px;
-  background: linear-gradient(135deg, #FFF9F0, #FFF5E8);
+
+.weatherNote {
+  margin: 20px 0;
+  padding: 14px 18px;
+  background: #FCF9F6;
   border-radius: 12px;
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  border: 1px solid #F0E6DD;
-}
-
-.humorIcon {
-  font-size: 20px;
-  flex-shrink: 0;
-}
-
-.humorText {
-  margin: 0;
+  border-left: 3px solid #9B7B5C;
   font-size: 0.85rem;
-  color: #8B6B4A;
-  line-height: 1.5;
-  font-style: italic;
+  color: #6B6B6B;
 }
 
 .mapBtn {
@@ -289,53 +303,61 @@
   align-items: center;
   gap: 8px;
   margin-top: 20px;
-  padding: 12px 32px;
-  background: #D8A7A0;
-  color: white;
+  padding: 10px 28px;
+  background: transparent;
+  color: #9B7B5C;
   text-decoration: none;
-  border-radius: 50px;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  border-radius: 40px;
+  font-weight: 450;
+  font-size: 0.85rem;
+  letter-spacing: 0.3px;
+  transition: all 0.25s ease;
+  border: 1px solid #D4C5B2;
 }
 
 .mapBtn:hover {
   background: #5A0F1A;
-  transform: translateX(5px);
+  color: white;
+  border-color: #5A0F1A;
   gap: 12px;
 }
 
 .specialNote {
-  background: linear-gradient(135deg, #F7EFE5, #fff);
-  padding: 20px;
+  background: #FCF9F6;
+  padding: 18px 24px;
   border-radius: 16px;
   margin: 20px 0;
   text-align: center;
-  font-style: italic;
-  color: #5A0F1A;
-  border: 1px solid #D8A7A0;
+  color: #6B6B6B;
+  font-size: 0.85rem;
+  border: 1px solid #EAE3D9;
 }
 
-/* Schedule Card */
+/* Schedule Card - Refined */
 .scheduleCard {
   background: white;
-  border-radius: 30px;
+  border-radius: 24px;
   padding: 50px;
   max-width: 800px;
   margin: 0 auto;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.06);
 }
 
 .scheduleCard h2 {
   text-align: center;
   font-family: 'Playfair Display', serif;
-  color: #5A0F1A;
+  color: #2C2C2C;
   margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 1.8rem;
 }
 
 .scheduleSubtitle {
   text-align: center;
-  color: #D8A7A0;
+  color: #9B7B5C;
   margin-bottom: 50px;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
 }
 
 .timeline {
@@ -351,17 +373,18 @@
 
 .timelineIcon {
   position: relative;
-  width: 60px;
-  height: 60px;
-  background: #F7EFE5;
+  width: 56px;
+  height: 56px;
+  background: #FCF9F6;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #C6A75E;
-  font-size: 24px;
+  color: #9B7B5C;
+  font-size: 22px;
   flex-shrink: 0;
   z-index: 1;
+  border: 1px solid #EAE3D9;
 }
 
 .timelineDot {
@@ -369,9 +392,9 @@
   bottom: -35px;
   left: 50%;
   transform: translateX(-50%);
-  width: 2px;
+  width: 1px;
   height: 35px;
-  background: linear-gradient(180deg, #D8A7A0, transparent);
+  background: linear-gradient(180deg, #D4C5B2, transparent);
 }
 
 .timelineContent {
@@ -380,27 +403,45 @@
 }
 
 .timelineTime {
-  font-weight: 700;
+  font-weight: 500;
   color: #5A0F1A;
-  margin-bottom: 5px;
-  font-size: 1.1rem;
+  margin-bottom: 6px;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
 }
 
 .timelineEvent {
-  font-weight: 600;
-  color: #2B2B2B;
-  margin-bottom: 5px;
+  font-weight: 500;
+  color: #2C2C2C;
+  margin-bottom: 6px;
+  font-size: 1rem;
 }
 
 .timelineDescription {
   font-size: 0.85rem;
-  color: #6B6B6B;
+  color: #7A7A7A;
+  line-height: 1.5;
 }
 
-/* Practical Grid */
+.timelineLocation {
+  margin-top: 8px;
+}
+
+.locationBadge {
+  display: inline-block;
+  padding: 3px 12px;
+  background: #FCF9F6;
+  border-radius: 20px;
+  font-size: 10px;
+  color: #9B7B5C;
+  font-weight: 450;
+  letter-spacing: 0.3px;
+}
+
+/* Practical Grid - Refined */
 .practicalGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
@@ -409,57 +450,64 @@
 .practicalCard {
   background: white;
   border-radius: 20px;
-  padding: 35px;
+  padding: 35px 30px;
   text-align: center;
-  transition: all 0.3s cubic-bezier(0.33, 1, 0.68, 1);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.04);
+  border: 1px solid #EAE3D9;
 }
 
 .practicalCard:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+  border-color: #D4C5B2;
 }
 
 .practicalIconWrapper {
-  width: 80px;
-  height: 80px;
-  background: #F7EFE5;
+  width: 72px;
+  height: 72px;
+  background: #FCF9F6;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 20px;
-  font-size: 40px;
-  color: #C6A75E;
+  font-size: 32px;
+  color: #9B7B5C;
   transition: all 0.3s ease;
+  border: 1px solid #EAE3D9;
 }
 
 .practicalCard:hover .practicalIconWrapper {
-  background: #D8A7A0;
+  background: #5A0F1A;
   color: white;
-  transform: scale(1.1);
+  border-color: #5A0F1A;
 }
 
 .practicalCard h3 {
-  color: #5A0F1A;
-  margin-bottom: 15px;
-  font-size: 1.3rem;
+  color: #2C2C2C;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: -0.2px;
 }
 
 .practicalCard p {
   color: #6B6B6B;
   line-height: 1.6;
   margin-bottom: 15px;
+  font-size: 0.9rem;
 }
 
 .practicalDetail {
   padding-top: 15px;
-  border-top: 1px solid #F0E6DD;
+  border-top: 1px solid #EAE3D9;
 }
 
 .practicalDetail small {
-  color: #D8A7A0;
-  font-size: 0.8rem;
+  color: #9B7B5C;
+  font-size: 0.75rem;
+  letter-spacing: 0.3px;
 }
 
 /* CTA Section */
@@ -477,7 +525,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: radial-gradient(circle at 20% 40%, rgba(255,255,255,0.05) 2px, transparent 2px);
+  background-image: radial-gradient(circle at 20% 40%, rgba(255,255,255,0.04) 1px, transparent 1px);
   background-size: 30px 30px;
 }
 
@@ -489,16 +537,18 @@
 
 .ctaContent h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin-bottom: 15px;
   color: #C6A75E;
+  font-weight: 500;
+  letter-spacing: -0.3px;
 }
 
 .ctaContent p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-bottom: 35px;
-  opacity: 0.9;
-  color: #C6A75E;
+  opacity: 0.85;
+  color: #E8D5C0;
 }
 
 .ctaButtons {
@@ -510,30 +560,34 @@
 
 .rsvpBtn {
   display: inline-block;
-  padding: 14px 40px;
-  background: #ffffff;
+  padding: 12px 36px;
+  background: #FFFFFF;
   color: #5A0F1A;
   text-decoration: none;
-  border-radius: 50px;
-  font-weight: 600;
+  border-radius: 40px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
   transition: all 0.3s ease;
 }
 
 .rsvpBtn:hover {
   background: #C6A75E;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .giftBtn {
   display: inline-block;
-  padding: 14px 40px;
+  padding: 12px 36px;
   background: transparent;
   color: #C6A75E;
   text-decoration: none;
-  border-radius: 50px;
-  font-weight: 600;
-  border: 2px solid #C6A75E;
+  border-radius: 40px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+  border: 1px solid #C6A75E;
   transition: all 0.3s ease;
 }
 
@@ -558,7 +612,7 @@
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(15px);
   }
   to {
     opacity: 1;
@@ -571,7 +625,7 @@
     transform: rotate(45deg) translate(0, 0);
   }
   50% {
-    transform: rotate(45deg) translate(8px, 8px);
+    transform: rotate(45deg) translate(6px, 6px);
   }
 }
 
@@ -580,7 +634,7 @@
     transform: translate(0, 0);
   }
   50% {
-    transform: translate(2%, 2%);
+    transform: translate(1%, 1%);
   }
 }
 
@@ -589,7 +643,7 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
 }
 
@@ -597,23 +651,26 @@
 @media (max-width: 968px) {
   .infoCard {
     grid-template-columns: 1fr;
+    gap: 0;
   }
   
   .infoCardLeft {
     padding: 40px;
+    border-right: none;
+    border-bottom: 1px solid #EAE3D9;
   }
   
   .infoCardRight {
-    padding: 0 40px 40px 40px;
+    padding: 40px;
   }
   
   .practicalGrid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
   }
   
   .heroContent h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
 }
 
@@ -627,7 +684,7 @@
   }
   
   .heroContent p {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
   
   .tabSection {
@@ -635,20 +692,22 @@
   }
   
   .tabButtons {
-    gap: 12px;
+    border-radius: 40px;
+    padding: 6px;
   }
   
   .tabBtn {
-    padding: 10px 20px;
-    font-size: 0.85rem;
+    padding: 8px 18px;
+    font-size: 0.75rem;
+    gap: 6px;
   }
   
   .tabIcon {
-    font-size: 14px;
+    font-size: 13px;
   }
   
   .infoCardRight {
-    padding: 0 25px 30px 25px;
+    padding: 30px;
   }
   
   .infoCardRight h2 {
@@ -659,14 +718,18 @@
     padding: 30px;
   }
   
+  .scheduleCard h2 {
+    font-size: 1.5rem;
+  }
+  
   .timelineItem {
     gap: 15px;
   }
   
   .timelineIcon {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
   }
   
   .practicalGrid {
@@ -683,28 +746,37 @@
   }
   
   .rsvpBtn, .giftBtn {
-    width: 250px;
+    width: 240px;
     text-align: center;
   }
 }
 
 @media (max-width: 480px) {
   .heroContent h1 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
   
   .heroDate {
-    font-size: 0.85rem;
-    padding: 8px 18px;
+    font-size: 0.75rem;
+    padding: 6px 16px;
   }
   
   .tabButtons {
     flex-direction: column;
-    align-items: stretch;
+    background: transparent;
+    padding: 0;
+    gap: 10px;
   }
   
   .tabBtn {
+    background: white;
     justify-content: center;
+    border: 1px solid #EAE3D9;
+  }
+  
+  .tabBtn.active {
+    background: #5A0F1A;
+    border-color: #5A0F1A;
   }
   
   .timelineItem {
@@ -713,51 +785,14 @@
   }
   
   .timelineIcon {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
   
   .timelineDot {
     display: none;
   }
-}
-/* Add these new styles to your existing CSS */
-
-.weatherNote {
-  margin: 20px 0;
-  padding: 15px;
-  background: #FFF9F0;
-  border-radius: 12px;
-  border-left: 4px solid #F5A623;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.weatherIcon {
-  font-size: 24px;
-}
-
-.timelineLocation {
-  margin-top: 8px;
-}
-
-.locationBadge {
-  display: inline-block;
-  padding: 4px 12px;
-  background: #F7EFE5;
-  border-radius: 20px;
-  font-size: 11px;
-  color: #D8A7A0;
-  font-weight: 500;
-}
-
-/* Update tab button text for mobile */
-@media (max-width: 768px) {
-  .tabBtn {
-    font-size: 0.8rem;
-  }
   
-  .weatherNote {
-    font-size: 0.85rem;
+  .infoCardRight h2 {
+    font-size: 1.3rem;
   }
 }

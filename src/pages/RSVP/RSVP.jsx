@@ -70,8 +70,8 @@ const RSVP = () => {
       <div className={styles.success}>
         <div className={styles.successCard}>
           <FaCheckCircle className={styles.successIcon} />
-          <h1>Thank You for RSVPing!</h1>
-          <p>We can't wait to celebrate with you on September 12, 2026.</p>
+          <h1>RSVP Confirmed</h1>
+          <p>We look forward to celebrating with you on September 12, 2026.</p>
           <button onClick={() => window.location.href = '/'} className={styles.homeBtn}>
             Return to Home
           </button>
@@ -86,9 +86,9 @@ const RSVP = () => {
         <div className={styles.heroOverlay}></div>
         <div className={styles.heroContent}>
           <h1>RSVP</h1>
-          <p>Please let us know if you'll be joining us</p>
+          <p>Please confirm your attendance</p>
           <div className={styles.deadline}>
-            <span>Please respond by July 16, 2026</span>
+            <span>Kindly respond by July 16, 2026</span>
           </div>
         </div>
       </section>
@@ -98,9 +98,8 @@ const RSVP = () => {
           <div className={styles.formContainer}>
             {step === 'code' && (
               <div className={styles.codeStep}>
-                <div className={styles.codeIcon}>💌</div>
-                <h2>Enter Your Unique Code</h2>
-                <p>Please enter the code found on your invitation</p>
+                <h2>Your Access Code</h2>
+                <p>Enter the unique code from your invitation</p>
                 <form onSubmit={handleCodeSubmit} className={styles.codeForm}>
                   <div className={styles.inputGroup}>
                     <input
@@ -111,18 +110,19 @@ const RSVP = () => {
                       required
                     />
                     <button type="submit" disabled={loading}>
-                      {loading ? 'Checking...' : <><FaSearch /> Verify Code</>}
+                      {loading ? 'Verifying...' : <><FaSearch /> Verify</>}
                     </button>
                   </div>
                   {error && <p className={styles.error}>{error}</p>}
                 </form>
+                <p className={styles.helpText}>Your code can be found on your invitation card</p>
               </div>
             )}
 
             {step === 'form' && guestData && (
               <div className={styles.formStep}>
                 <div className={styles.formHeader}>
-                  <h2>Please Confirm Your Attendance</h2>
+                  <h2>Confirm Your Attendance</h2>
                   <p>Code: <strong>{code}</strong></p>
                 </div>
 
@@ -139,7 +139,7 @@ const RSVP = () => {
                             checked={responses[guest.id] === 'yes'}
                             onChange={() => handleAttendanceChange(guest.id, 'yes')}
                           />
-                          <span>🎉 Will Attend</span>
+                          <span>Will Attend</span>
                         </label>
                         <label className={`${styles.option} ${responses[guest.id] === 'no' ? styles.selectedNo : ''}`}>
                           <input
@@ -149,17 +149,17 @@ const RSVP = () => {
                             checked={responses[guest.id] === 'no'}
                             onChange={() => handleAttendanceChange(guest.id, 'no')}
                           />
-                          <span>💔 Cannot Attend</span>
+                          <span>Cannot Attend</span>
                         </label>
                       </div>
 
                       {responses[guest.id] === 'yes' && (
                         <div className={styles.detailsSection}>
                           <label>
-                            <FaUtensils /> Dietary Restrictions:
+                            <FaUtensils /> Dietary Requirements
                             <textarea
                               name={`dietary_${guest.id}`}
-                              placeholder="Any allergies or dietary restrictions?"
+                              placeholder="Please note any allergies or dietary restrictions"
                               rows="2"
                             />
                           </label>
@@ -170,13 +170,13 @@ const RSVP = () => {
 
                   <div className={styles.globalSection}>
                     <label>
-                      <FaMusic /> Song Request for the DJ:
-                      <input type="text" name="song_request" placeholder="Any song you'd love to hear?" />
+                      <FaMusic /> Song Request
+                      <input type="text" name="song_request" placeholder="Any song you would like to hear" />
                     </label>
                   </div>
 
                   <button type="submit" className={styles.submitBtn} disabled={loading}>
-                    {loading ? 'Submitting...' : 'Submit RSVP'}
+                    {loading ? 'Submitting...' : 'Submit Response'}
                   </button>
                 </form>
               </div>

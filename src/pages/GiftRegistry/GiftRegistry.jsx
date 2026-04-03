@@ -97,7 +97,7 @@ const GiftRegistry = () => {
               className={`${styles.tabBtn} ${activeTab === 'gifts' ? styles.active : ''}`}
               onClick={() => setActiveTab('gifts')}
             >
-              <FaGift /> Physical Gifts
+              <FaGift />Gifts
             </button>
             <button 
               className={`${styles.tabBtn} ${activeTab === 'cash' ? styles.active : ''}`}
@@ -130,7 +130,7 @@ const GiftRegistry = () => {
                       {item.image_url ? (
                         <img src={item.image_url} alt={item.name} />
                       ) : (
-                        <div className={styles.imagePlaceholder}>🎁</div>
+                        <div className={styles.imagePlaceholder}></div>
                       )}
                     </div>
                     <h3>{item.name}</h3>
@@ -206,7 +206,7 @@ const GiftRegistry = () => {
                   <div className={styles.formGroup}>
                     <label>Donation Amount ($)</label>
                     <div className={styles.amountButtons}>
-                      {[500, 1000, 2000, 5000, 10000].map(amount => (
+                      {[100, 250, 500, 1000].map(amount => (
                         <button 
                           key={amount}
                           type="button"
@@ -241,7 +241,7 @@ const GiftRegistry = () => {
                 </form>
 
                 <div className={styles.note}>
-                  <p>💝 Your generosity means the world to us. All donations go directly toward our future together.</p>
+                  <p>Your generosity means the world to us. All donations go directly toward our future together.</p>
                 </div>
               </div>
             </div>

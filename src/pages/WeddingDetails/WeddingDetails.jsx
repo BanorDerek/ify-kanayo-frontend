@@ -4,10 +4,7 @@ import {
   FaClock,
   FaMapMarkerAlt,
   FaCalendarAlt,
-  FaCar,
   FaParking,
-  FaWheelchair,
-  FaPhone,
   FaUmbrella,
   FaMusic,
   FaGlassCheers,
@@ -28,48 +25,44 @@ const WeddingDetails = () => {
   const ceremonyDetails = {
     title: "Wedding Ceremony",
     time: "4:00 PM - 5:00 PM",
-    venue: "Brick and Ivey Garden (Outdoors)",
+    venue: "Brick and Ivey Garden",
     address: "1440A Roswell Rd, Marietta, GA 30062, United States",
-    dressCode: "Cocktail or Traditional",
-    description: "Join us as we exchange vows.",
-    note: "⚠️ The ceremony will be outdoors. Please dress accordingly for September weather."
+    description: "Join us as we exchange vows in an outdoor garden setting.",
+    note: "The ceremony will take place outdoors. Please prepare accordingly for September weather."
   };
 
   const receptionDetails = {
-    title: "Reception",
+    title: "Wedding Reception",
     time: "5:30 PM - 11:00 PM",
-    venue: "Brick and Ivey Grand Hall (Indoors)",
+    venue: "Brick and Ivey Grand Hall",
     address: "1440A Roswell Rd, Marietta, GA 30062, United States",
-    description: "Celebrate with us for an evening of dinner, dancing, and making memories that will last a lifetime.",
+    description: "An evening of dinner, dancing, and celebration awaits.",
   };
 
   const schedule = [
-    { time: "4:00 PM", event: "Ceremony Begins", icon: <FaRing />, description: "Outdoor garden ceremony", location: "Outdoors" },
-    { time: "4:45 PM", event: "Family Photos", icon: <FaCamera />, description: "Family and wedding party photos", location: "Outdoors" },
-    { time: "5:30 PM", event: "Cocktail Hour", icon: <FaGlassCheers />, description: "Drinks and appetizers served", location: "Indoors - Grand Hall" },
-    { time: "6:30 PM", event: "Reception & Dinner", icon: <FaGlassCheers />, description: "Welcome speech and dinner service", location: "Indoors - Grand Hall" },
-    { time: "8:00 PM", event: "First Dance", icon: <FaMusic />, description: "Our first dance as husband and wife", location: "Indoors - Dance Floor" },
-    { time: "8:30 PM", event: "Dancing & Celebration", icon: <FaMusic />, description: "Open dance floor for all guests", location: "Indoors - Dance Floor" },
-    { time: "10:30 PM", event: "Late Night Snacks", icon: <FaGift />, description: "Midnight snack station opens", location: "Indoors - Grand Hall" },
-    { time: "11:00 PM", event: "Farewell", icon: <FaClock />, description: "Last dance and send-off", location: "Indoors" }
+    { time: "4:00 PM", event: "Ceremony", description: "Outdoor garden ceremony", location: "Garden" },
+    { time: "4:45 PM", event: "Family Portraits", description: "Family and wedding party photographs", location: "Garden" },
+    { time: "5:30 PM", event: "Cocktail Hour", description: "Drinks and hors d'oeuvres", location: "Grand Hall" },
+    { time: "6:30 PM", event: "Reception & Dinner", description: "Welcome speech and dinner service", location: "Grand Hall" },
+    { time: "8:00 PM", event: "First Dance", description: "Our first dance as a married couple", location: "Grand Hall" },
+    { time: "8:30 PM", event: "Dancing", description: "Open dance floor for all guests", location: "Grand Hall" },
+    { time: "10:30 PM", event: "Late Night Bites", description: "Midnight snack station opens", location: "Grand Hall" },
+    { time: "11:00 PM", event: "Farewell", description: "Last dance and evening conclusion", location: "Grand Hall" }
   ];
 
   const practicalInfo = [
-
     {
       icon: <FaParking />,
       title: "Parking",
-      description: "parking is available at the venue.",
+      description: "Complimentary parking is available at the venue.",
+      details: "Valet service will be provided"
     },
-    
     {
       icon: <FaUmbrella />,
       title: "Weather Plan",
-      description: "September in Marietta averages 75-85°F. The ceremony is planned for outdoors, but we have an indoor backup plan in case of rain.",
-      details: "Check back for weather updates before the event"
+      description: "September in Marietta averages 75-85°F.",
+      details: "Indoor backup arrangements have been made"
     },
- 
-    
   ];
 
   return (
@@ -81,14 +74,14 @@ const WeddingDetails = () => {
         <div className={styles.heroContent}>
           <span className={styles.heroTag}>Save the Date</span>
           <h1>Wedding Details</h1>
-          <p>Everything you need to know about our special day</p>
+          <p>Everything you need to know about our celebration</p>
           <div className={styles.heroDate}>
             <FaCalendarAlt />
             <span>September 12, 2026</span>
           </div>
         </div>
         <div className={styles.heroScroll}>
-          <span>Explore Details</span>
+          <span>Explore</span>
           <div className={styles.scrollArrow}></div>
         </div>
       </section>
@@ -102,14 +95,14 @@ const WeddingDetails = () => {
               onClick={() => setActiveTab('ceremony')}
             >
               <FaRing className={styles.tabIcon} />
-              Ceremony (Outdoors)
+              Ceremony
             </button>
             <button
               className={`${styles.tabBtn} ${activeTab === 'reception' ? styles.active : ''}`}
               onClick={() => setActiveTab('reception')}
             >
               <FaGlassCheers className={styles.tabIcon} />
-              Reception (Indoors)
+              Reception
             </button>
             <button
               className={`${styles.tabBtn} ${activeTab === 'schedule' ? styles.active : ''}`}
@@ -123,7 +116,7 @@ const WeddingDetails = () => {
               onClick={() => setActiveTab('info')}
             >
               <FaQuestionCircle className={styles.tabIcon} />
-              Practical Info
+              Information
             </button>
           </div>
 
@@ -155,20 +148,16 @@ const WeddingDetails = () => {
                     <p className={styles.address}>{ceremonyDetails.address}</p>
                     <p className={styles.description}>{ceremonyDetails.description}</p>
                     <div className={styles.weatherNote}>
-                      <span className={styles.weatherIcon}>🌤️</span>
                       <span>{ceremonyDetails.note}</span>
                     </div>
-                    <div className={styles.humorNote}>
-  <span className={styles.humorIcon}>👠➡️🏃‍♀️</span>
-  <p className={styles.humorText}>Paved courtyard = no heels sinking into grass! Your stilettos will survive, and so will your ankles. Dance freely, walk proudly, and leave the grass stains for someone else's wedding. 💃</p>
-</div>
                     <a
                       href="https://maps.google.com/?q=Brick+and+Ivey+Marietta+GA"
                       target="_blank"
                       rel="noopener noreferrer"
                       className={styles.mapBtn}
                     >
-                      Get Directions →
+                      Get Directions
+                      <span>→</span>
                     </a>
                   </div>
                 </div>
@@ -201,16 +190,14 @@ const WeddingDetails = () => {
                     </div>
                     <p className={styles.address}>{receptionDetails.address}</p>
                     <p className={styles.description}>{receptionDetails.description}</p>
-                    <div className={styles.specialNote}>
-                      <p>✨ {receptionDetails.note} ✨</p>
-                    </div>
                     <a
                       href="https://maps.google.com/?q=Brick+and+Ivey+Marietta+GA"
                       target="_blank"
                       rel="noopener noreferrer"
                       className={styles.mapBtn}
                     >
-                      Get Directions →
+                      Get Directions
+                      <span>→</span>
                     </a>
                   </div>
                 </div>
@@ -222,12 +209,19 @@ const WeddingDetails = () => {
               <div className={`${styles.tabPane} fade-in`}>
                 <div className={styles.scheduleCard}>
                   <h2>Event Timeline</h2>
-                  <p className={styles.scheduleSubtitle}>Plan your evening with our event schedule</p>
+                  <p className={styles.scheduleSubtitle}>Plan your evening</p>
                   <div className={styles.timeline}>
                     {schedule.map((item, index) => (
                       <div key={index} className={styles.timelineItem}>
                         <div className={styles.timelineIcon}>
-                          {item.icon}
+                          {item.event === "Ceremony" && <FaRing />}
+                          {item.event === "Family Portraits" && <FaCamera />}
+                          {item.event === "Cocktail Hour" && <FaGlassCheers />}
+                          {item.event === "Reception & Dinner" && <FaGlassCheers />}
+                          {item.event === "First Dance" && <FaMusic />}
+                          {item.event === "Dancing" && <FaMusic />}
+                          {item.event === "Late Night Bites" && <FaGift />}
+                          {item.event === "Farewell" && <FaClock />}
                           {index < schedule.length - 1 && <div className={styles.timelineDot}></div>}
                         </div>
                         <div className={styles.timelineContent}>
@@ -273,14 +267,14 @@ const WeddingDetails = () => {
         <div className={styles.ctaPattern}></div>
         <div className="container">
           <div className={styles.ctaContent}>
-            <h2>Ready to Celebrate With Us?</h2>
-            <p>Please let us know if you'll be joining us for this special day</p>
+            <h2>Join Our Celebration</h2>
+            <p>Please let us know if you will be attending</p>
             <div className={styles.ctaButtons}>
               <Link to="/rsvp" className={styles.rsvpBtn}>
                 RSVP Now
               </Link>
               <Link to="/gift-registry" className={styles.giftBtn}>
-                View Gift Registry
+                Gift Registry
               </Link>
             </div>
           </div>

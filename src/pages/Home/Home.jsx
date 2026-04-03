@@ -192,23 +192,9 @@ const Home = () => {
           </div>
         </div>
 
-        <div className={styles.floatingHearts}>
-          <div className={styles.heart}>❤️</div>
-          <div className={styles.heart2}>💕</div>
-          <div className={styles.heart3}>💖</div>
-          <div className={styles.heart4}>💗</div>
-          <div className={styles.heart5}>💓</div>
-          <div className={styles.heart6}>❤️‍🔥</div>
-        </div>
+      
 
-        <div className={styles.sparkles}>
-          <div className={styles.sparkle}>✨</div>
-          <div className={styles.sparkle2}>✨</div>
-          <div className={styles.sparkle3}>✨</div>
-          <div className={styles.sparkle4}>✨</div>
-          <div className={styles.sparkle5}>✨</div>
-          <div className={styles.sparkle6}>✨</div>
-        </div>
+   
         
         <div className={styles.heroContent}>
           <div className={styles.heroText}>
@@ -279,7 +265,6 @@ const Home = () => {
             >
               <Link to="/rsvp" className={styles.rsvpButton}>
                 <span>Reserve Your Seat</span>
-                <span className={styles.buttonSparkle}>✨</span>
                 <div className={styles.buttonGlow}></div>
               </Link>
             </motion.div>
@@ -305,7 +290,7 @@ const Home = () => {
         <div className="container">
           <div className={styles.countdownWrapper}>
             <span className={`${styles.sectionTag} ${styles['scroll-from-left']}`}>
-              ✨ THE BIG DAY ✨
+              THE BIG DAY
             </span>
             <h2 className={`${styles.sectionTitle} ${styles['scroll-from-right']}`}>
               Counting Down to Forever
@@ -322,7 +307,7 @@ const Home = () => {
         <div className="container">
           <div className={styles.welcomeContent}>
             <div className={`${styles.welcomeText} ${styles['scroll-from-left']}`}>
-              <div className={styles.welcomeBadge}>✨ Happily Ever After ✨</div>
+              <div className={styles.welcomeBadge}>Happily Ever After </div>
               <span className={styles.sectionTag}>OUR LOVE STORY</span>
               <h2>Welcome to Our Wedding Journey</h2>
               <div className={styles.quoteMark}>“</div>
@@ -346,119 +331,115 @@ const Home = () => {
                 <div className={styles.frameDecor}></div>
                 <div className={styles.imageGlow}></div>
               </div>
-              <div className={styles.floatingHeartsImage}>
-                <div className={styles.floatingHeart}>❤️</div>
-                <div className={styles.floatingHeart}>✨</div>
-                <div className={styles.floatingHeart}>💕</div>
-                <div className={styles.floatingHeart}>💫</div>
-              </div>
+       
             </div>
           </div>
         </div>
       </section>
 
-      {/* Wedding Essentials Section */}
-      <section className={`section ${styles.infoSection}`}>
-        <div className={styles.infoDecor}>
-          <div className={styles.infoDecorRing}></div>
-          <div className={styles.infoDecorRing2}></div>
+{/* Details Section */}
+<section className={`section ${styles.detailsSection}`}>
+  <div className={styles.detailsContainer}>
+    <div className={styles.detailsHeader}>
+      <div className={`${styles.detailsTag} ${styles['scroll-from-left']}`}>
+        Wedding Details
+      </div>
+      <h2 className={`${styles.detailsTitle} ${styles['scroll-from-right']}`}>
+        The Celebration
+      </h2>
+      <p className={`${styles.detailsSubtitle} ${styles['scroll-from-left']}`}>
+        Join us for an evening of elegance and joy
+      </p>
+    </div>
+
+    <div className={styles.detailsGrid}>
+      {/* Card 1: Date & Time */}
+      <div className={`${styles.detailsCard} ${styles['scroll-from-left']}`}>
+        <div className={styles.detailsCardDivider}></div>
+        <div className={styles.detailsIcon}>
+          <svg viewBox="0 0 24 24" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+            <circle cx="12" cy="15" r="1"></circle>
+            <circle cx="16" cy="15" r="1"></circle>
+            <circle cx="8" cy="15" r="1"></circle>
+          </svg>
         </div>
-        <div className="container">
-          <div className={styles.infoHeader}>
-            <span className={`${styles.sectionTag} ${styles['scroll-from-left']}`}>ESSENTIAL DETAILS</span>
-            <h2 className={`${styles.sectionTitle} ${styles['scroll-from-right']}`}>Wedding Essentials</h2>
-            <p className={`${styles.infoSubtitle} ${styles['scroll-from-left']}`}>Everything you need to know for our special day</p>
+        <h3>Date & Time</h3>
+        <div className={styles.detailsCardContent}>
+          <div className={styles.detailsDateMain}>09.12.2026</div>
+          <div className={styles.detailsDateSecondary}>Saturday</div>
+          <div className={styles.detailsTimeSlot}>
+            <span className={styles.detailsTime}>4:00 PM</span>
+            <span className={styles.detailsTimeLabel}>Ceremony</span>
           </div>
-          <div className={styles.infoGrid}>
-            <div className={`${styles.infoCard} ${styles['scroll-from-left']}`}>
-              <div className={styles.cardIconWrapper}>
-                <div className={styles.cardIconBg}></div>
-                <div className={styles.cardIcon}>📅</div>
-              </div>
-              <h3>Date & Time</h3>
-              <div className={styles.cardContent}>
-                <p className={styles.mainDate}>September 12, 2026</p>
-                <div className={styles.timeSlot}>
-                  <span className={styles.timeIcon}>🕒</span>
-                  <span>4:00 PM - 11:00 PM</span>
-                </div>
-                <div className={styles.timeSlot}>
-                  <span className={styles.timeIcon}>🍽️</span>
-                  <span>Reception to follow</span>
-                </div>
-              </div>
-              <div className={styles.cardGlow}></div>
-              <div className={styles.cardSparkle}>✨</div>
-            </div>
-
-            <div className={`${styles.infoCard} ${styles['scroll-from-right']}`}>
-              <div className={styles.cardIconWrapper}>
-                <div className={styles.cardIconBg}></div>
-                <div className={styles.cardIcon}>📍</div>
-              </div>
-              <h3>Venue</h3>
-              <div className={styles.cardContent}>
-                <p className={styles.venueName}>Brick and Ivey</p>
-                <p className={styles.venueAddress}>Marietta, GA, USA</p>
-                <div className={styles.venueDetail}>
-                  <span>🏛️ Historic Charm</span>
-                  <span>✨ Modern Elegance</span>
-                </div>
-                <a
-                  href="https://maps.google.com/?q=Brick+and+Ivey+Marietta+GA"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.mapLink}
-                >
-                  <span>📍 Get Directions</span>
-                  <span className={styles.mapArrow}>→</span>
-                </a>
-              </div>
-              <div className={styles.cardGlow}></div>
-              <div className={styles.cardSparkle}>✨</div>
-            </div>
-
-            <div className={`${styles.infoCard} ${styles['scroll-from-left-scale']}`}>
-              <div className={styles.cardIconWrapper}>
-                <div className={styles.cardIconBg}></div>
-                <div className={styles.dressCodeIcons}>
-                  <span className={styles.dressIcon}>👗</span>
-                  <span className={styles.dressIcon}>👔</span>
-                </div>
-              </div>
-              <h3>Dress Code</h3>
-              <div className={styles.cardContent}>
-                <p className={styles.dressCodeTitle}>Formal Attire</p>
-                <div className={styles.dressCodeDetails}>
-                  <div className={styles.dressOption}>
-                    <span className={styles.dressColor} style={{ backgroundColor: '#D8A7A0' }}></span>
-                    <span>Dusty Rose & Champagne</span>
-                  </div>
-                  <div className={styles.dressOption}>
-                    <span className={styles.dressColor} style={{ backgroundColor: '#C6A75E' }}></span>
-                    <span>Gold Accents</span>
-                  </div>
-                  <div className={styles.dressOption}>
-                    <span className={styles.dressColor} style={{ backgroundColor: '#5A0F1A' }}></span>
-                    <span>Deep Wine Details</span>
-                  </div>
-                </div>
-                <div className={styles.dressHint}>
-                  <span>👗 For Ladies:</span> Floor-length gowns, cocktail dresses, Traditional Dresses.
-                </div>
-                <div className={styles.dressHint}>
-                  <span>👔 For Gentlemen:</span> Suits, tuxedos, Traditional dresses.
-                </div>
-                <div className={styles.dressNote}>
-                  ✨ Wear our wedding colors to match the theme!
-                </div>
-              </div>
-              <div className={styles.cardGlow}></div>
-              <div className={styles.cardSparkle}>✨</div>
-            </div>
+          <div className={styles.detailsTimeSlot}>
+            <span className={styles.detailsTime}>5:00 PM</span>
+            <span className={styles.detailsTimeLabel}>Reception</span>
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* Card 2: Venue */}
+      <div className={`${styles.detailsCard} ${styles['scroll-from-right']}`}>
+        <div className={styles.detailsCardDivider}></div>
+        <div className={styles.detailsIcon}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 2c-4 0-7 3-7 7 0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z" />
+            <circle cx="12" cy="9" r="2.5" />
+          </svg>
+        </div>
+        <h3>Venue</h3>
+        <div className={styles.detailsCardContent}>
+          <div className={styles.detailsVenueName}>Brick and Ivey</div>
+          <div className={styles.detailsVenueAddress}>
+            1440A Roswell Rd<br />
+            Marietta, GA 30062
+          </div>
+          <a
+            href="https://maps.google.com/?q=Brick+and+Ivey+Marietta+GA"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.detailsMapLink}
+          >
+            View Map
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      {/* Card 3: Dress Code */}
+      <div className={`${styles.detailsCard} ${styles['scroll-from-left-scale']}`}>
+        <div className={styles.detailsIcon}>
+          <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 2L9 7h6L12 2z" />
+            <path d="M9 7v12a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V7" />
+            <path d="M7 7h10" />
+            <circle cx="12" cy="12" r="1.5" />
+          </svg>
+        </div>
+        <h3>Attire</h3>
+        <div className={styles.detailsCardContent}>
+          <div className={styles.detailsDressGrid}>
+            <div className={styles.detailsDressCategory}>
+              <p>Formal Evening Wear</p>
+              <span>Floor-length gowns · Cocktail dresses · Suits · Tuxedos</span>
+            </div>
+            <div className={styles.detailsDressCategory}>
+              <p>Traditional Attire</p>
+              <span>Welcomed and celebrated</span>
+            </div>
+          </div>
+          <div className={styles.detailsDressNote}>
+            Palette: Dusty rose · Champagne · Gold
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Gallery Section */}
       <section className={`section ${styles.gallerySection}`}>
@@ -495,8 +476,8 @@ const Home = () => {
                 ideal backdrop for our celebration.
               </p>
               <div className={styles.venueDetails}>
-                <p><strong>📍 Address:</strong> 1440A Roswell Rd, Marietta, GA 30062, United States</p>
-                <p><strong>🚗 Parking:</strong> Complimentary valet parking available</p>
+                <p><strong>Address:</strong> 1440A Roswell Rd, Marietta, GA 30062, United States</p>
+                <p><strong>Parking:</strong> Complimentary valet parking available</p>
               </div>
               <a
                 href="https://maps.google.com/?q=Brick+and+Ivey+Marietta+GA"

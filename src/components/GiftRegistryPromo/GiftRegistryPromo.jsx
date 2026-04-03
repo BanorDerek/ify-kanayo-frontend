@@ -14,8 +14,8 @@ const GiftRegistryPromo = () => {
         <h3>Celebrate with a Gift</h3>
         <p>Your presence means the world to us, but if you wish to celebrate with a gift, we've made it easy!</p>
         <div className={styles.options}>
-          <span>🎁 Physical Gifts</span>
-          <span>💰 Cash Donations</span>
+          <span>Gifts</span>
+          <span>Cash Donations</span>
         </div>
         <Link to="/gift-registry" className={styles.promoBtn}>
           View Gift Registry

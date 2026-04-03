@@ -1065,301 +1065,275 @@
 }
 
 /* ==================== */
-/* INFO SECTION (Wedding Essentials) */
+/* DETAILS SECTION - Mature & Elegant */
 /* ==================== */
-.infoSection {
-  padding: 100px 0;
-  background: linear-gradient(135deg, #F7EFE5 0%, #FEFAF5 100%);
+.detailsSection {
+  padding: 120px 0;
+  background: #FFFFFF;
   position: relative;
-  overflow: hidden;
 }
 
-.infoDecor {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
+.detailsContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
-.infoDecorRing {
-  position: absolute;
-  top: -100px;
-  right: -100px;
-  width: 300px;
-  height: 300px;
-  border: 2px solid rgba(216, 167, 160, 0.1);
-  border-radius: 50%;
-  animation: rotateRing 30s linear infinite;
-}
-
-.infoDecorRing2 {
-  position: absolute;
-  bottom: -100px;
-  left: -100px;
-  width: 250px;
-  height: 250px;
-  border: 2px solid rgba(198, 167, 94, 0.1);
-  border-radius: 50%;
-  animation: rotateRingReverse 25s linear infinite;
-}
-
-.infoHeader {
+.detailsHeader {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
 
-.infoSubtitle {
-  color: #D8A7A0;
-  font-size: 16px;
-  margin-top: 10px;
-  font-weight: 300;
-}
-
-.infoGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
-  margin-top: 40px;
-}
-
-.infoCard {
-  background: white;
-  border-radius: 24px;
-  padding: 40px 30px;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.33, 1, 0.68, 1);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-}
-
-.infoCard:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.12);
-}
-
-.cardIconWrapper {
-  position: relative;
+.detailsTag {
   display: inline-block;
-  margin-bottom: 25px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #9B7B5C;
+  margin-bottom: 20px;
+  font-weight: 400;
+  position: relative;
 }
 
-.cardIconBg {
+.detailsTag::before,
+.detailsTag::after {
+  content: '';
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 70px;
-  height: 70px;
-  background: linear-gradient(135deg, #D8A7A0, #C6A75E);
-  border-radius: 50%;
-  opacity: 0.1;
-  transition: all 0.3s ease;
-}
-
-.infoCard:hover .cardIconBg {
-  opacity: 0.2;
-  transform: translate(-50%, -50%) scale(1.1);
-}
-
-.cardIcon {
-  font-size: 48px;
-  position: relative;
-  z-index: 1;
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-
-.infoCard:hover .cardIcon {
-  transform: scale(1.1);
-}
-
-.dressCodeIcons {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  gap: 10px;
-}
-
-.dressIcon {
-  font-size: 40px;
-  transition: transform 0.3s ease;
-  display: inline-block;
-}
-
-.infoCard:hover .dressIcon {
-  transform: translateY(-5px);
-}
-
-.infoCard h3 {
-  font-size: 1.6rem;
-  color: #5A0F1A;
-  margin-bottom: 20px;
-  font-family: 'Playfair Display', serif;
-}
-
-.cardContent {
-  text-align: left;
-}
-
-.mainDate {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #2B2B2B;
-  margin-bottom: 15px;
-  font-family: 'Playfair Display', serif;
-}
-
-.timeSlot {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
-  color: #6B6B6B;
-  font-size: 1rem;
-}
-
-.timeIcon {
-  font-size: 1.2rem;
   width: 30px;
+  height: 1px;
+  background: #D4C5B2;
 }
 
-.venueName {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #2B2B2B;
-  margin-bottom: 8px;
+.detailsTag::before {
+  left: -40px;
+}
+
+.detailsTag::after {
+  right: -40px;
+}
+
+.detailsTitle {
   font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  font-weight: 500;
+  color: #2C2C2C;
+  margin-bottom: 16px;
+  letter-spacing: -0.3px;
 }
 
-.venueAddress {
-  color: #D8A7A0;
-  margin-bottom: 15px;
-  font-size: 0.95rem;
+.detailsSubtitle {
+  color: #8A8A8A;
+  font-size: 1rem;
+  font-weight: 300;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
-.venueDetail {
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: #EAE3D9;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.05);
+}
+
+.detailsCard {
+  background: #FFFFFF;
+  padding: 48px 32px;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.detailsCard:hover {
+  background: #FCF9F6;
+}
+
+.detailsCardDivider {
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: #EAE3D9;
+}
+
+.detailsCard:last-child .detailsCardDivider {
+  display: none;
+}
+
+.detailsIcon {
+  margin-bottom: 28px;
+}
+
+.detailsIcon svg {
+  width: 32px;
+  height: 32px;
+  stroke: #9B7B5C;
+  stroke-width: 1.2;
+  fill: none;
+}
+
+.detailsCard h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #2C2C2C;
+  margin-bottom: 24px;
+  letter-spacing: -0.2px;
+}
+
+.detailsCardContent {
   display: flex;
-  gap: 15px;
-  margin-bottom: 20px;
-  font-size: 0.85rem;
-  color: #C6A75E;
-  background: #F7EFE5;
-  padding: 8px 12px;
-  border-radius: 30px;
-  width: fit-content;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.mapLink {
+.detailsDateMain {
+  font-size: 1.8rem;
+  font-weight: 500;
+  font-family: 'Playfair Display', serif;
+  color: #2C2C2C;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.detailsDateSecondary {
+  font-size: 0.9rem;
+  color: #9B7B5C;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+.detailsTimeSlot {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.detailsTime {
+  font-size: 1rem;
+  color: #4A4A4A;
+  font-weight: 450;
+}
+
+.detailsTimeLabel {
+  font-size: 0.8rem;
+  color: #9B7B5C;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detailsVenueName {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #2C2C2C;
+  margin-bottom: 6px;
+}
+
+.detailsVenueAddress {
+  font-size: 0.9rem;
+  color: #7A7A7A;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.detailsMapLink {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: 10px;
-  color: #C6A75E;
+  color: #9B7B5C;
+  font-size: 0.85rem;
   text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  padding: 8px 0;
+  letter-spacing: 0.3px;
+  border-bottom: 1px solid #E0D6CC;
+  padding-bottom: 4px;
+  transition: all 0.2s ease;
 }
 
-.mapLink:hover {
+.detailsMapLink:hover {
+  color: #6B4C3A;
   gap: 12px;
-  color: #5A0F1A;
+  border-bottom-color: #9B7B5C;
 }
 
-.mapArrow {
-  transition: transform 0.3s ease;
-}
-
-.mapLink:hover .mapArrow {
-  transform: translateX(5px);
-}
-
-.dressCodeTitle {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #5A0F1A;
-  margin-bottom: 15px;
-}
-
-.dressCodeDetails {
-  background: #F7EFE5;
-  padding: 15px;
-  border-radius: 16px;
-  margin-bottom: 20px;
-}
-
-.dressOption {
+.detailsDressGrid {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 10px;
-  font-size: 0.9rem;
-  color: #2B2B2B;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.dressOption:last-child {
-  margin-bottom: 0;
-}
-
-.dressColor {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: 2px solid white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.dressHint {
-  margin-bottom: 12px;
+.detailsDressCategory p {
   font-size: 0.85rem;
-  color: #6B6B6B;
-  line-height: 1.5;
+  font-weight: 500;
+  color: #2C2C2C;
+  margin-bottom: 6px;
+  letter-spacing: 0.3px;
 }
 
-.dressHint span {
-  font-weight: 600;
-  color: #5A0F1A;
-}
-
-.dressNote {
-  margin-top: 15px;
-  padding: 10px;
-  background: linear-gradient(135deg, rgba(216, 167, 160, 0.1), rgba(198, 167, 94, 0.1));
-  border-radius: 12px;
+.detailsDressCategory span {
   font-size: 0.85rem;
-  color: #C6A75E;
-  text-align: center;
+  color: #7A7A7A;
+  line-height: 1.4;
 }
 
-.cardGlow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #D8A7A0, #C6A75E, #D8A7A0);
-  transform: translateX(-100%);
-  transition: transform 0.4s ease;
+.detailsDressNote {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #EAE3D9;
+  font-size: 0.8rem;
+  color: #9B7B5C;
+  font-style: normal;
+  letter-spacing: 0.2px;
 }
 
-.infoCard:hover .cardGlow {
-  transform: translateX(0);
+/* Responsive */
+@media (max-width: 968px) {
+  .detailsSection {
+    padding: 80px 0;
+  }
+  
+  .detailsContainer {
+    padding: 0 24px;
+  }
+  
+  .detailsGrid {
+    grid-template-columns: 1fr;
+    gap: 1px;
+    border-radius: 20px;
+  }
+  
+  .detailsCard {
+    padding: 40px 28px;
+  }
+  
+  .detailsCardDivider {
+    display: none;
+  }
+  
+  .detailsTitle {
+    font-size: 2.2rem;
+  }
 }
 
-.cardSparkle {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  font-size: 20px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  animation: sparkleRotate 2s infinite;
-}
-
-.infoCard:hover .cardSparkle {
-  opacity: 0.3;
+@media (max-width: 480px) {
+  .detailsSection {
+    padding: 60px 0;
+  }
+  
+  .detailsCard {
+    padding: 32px 24px;
+  }
+  
+  .detailsDateMain {
+    font-size: 1.5rem;
+  }
 }
 
 /* ==================== */

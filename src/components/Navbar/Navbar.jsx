@@ -51,7 +51,7 @@ const Navbar = () => {
             <span className={styles.logoText}>
               Ifeoma <span className={styles.amp}>&</span> Kanayo
             </span>
-            <FaHeart className={styles.logoHeart} />
+        
           </Link>
 
           {/* Desktop Navigation */}

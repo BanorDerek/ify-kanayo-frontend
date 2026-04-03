@@ -1,4 +1,3 @@
-// Home.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -16,6 +15,9 @@ const Home = () => {
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
+  
+  // Refs for scroll animation elements
+  const scrollElementsRef = useRef([]);
 
   useEffect(() => {
     // Create particles for hero section
@@ -37,16 +39,38 @@ const Home = () => {
       setActiveIndex((prev) => (prev + 1) % 3);
     }, 3000);
 
-    const handleScroll = () => {
-      const elements = document.querySelectorAll('.fade-on-scroll');
-      elements.forEach((el) => {
-        const rect = el.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight - 100;
-        if (isVisible) {
-          el.classList.add(styles.visible);
+    // Use Intersection Observer for better performance
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(styles.visible);
+        } else {
+          entry.target.classList.remove(styles.visible);
         }
       });
-    };
+    }, observerOptions);
+
+    // Observe all scroll animation elements - using the actual CSS Module class names
+    setTimeout(() => {
+      const scrollElements = document.querySelectorAll([
+        `.${styles['scroll-from-left']}`,
+        `.${styles['scroll-from-right']}`,
+        `.${styles['scroll-from-left-fade']}`,
+        `.${styles['scroll-from-right-fade']}`,
+        `.${styles['scroll-from-left-scale']}`,
+        `.${styles['scroll-from-right-scale']}`,
+        `.${styles['scroll-from-left-rotate']}`,
+        `.${styles['scroll-from-right-rotate']}`,
+        `.${styles['fade-on-scroll']}`
+      ].join(','));
+      
+      scrollElements.forEach(el => observer.observe(el));
+    }, 100);
 
     const handleMouseMove = (e) => {
       if (heroRef.current) {
@@ -69,14 +93,12 @@ const Home = () => {
 
     const handleTouchEnd = () => {
       if (touchStart - touchEnd > 75) {
-        // Swipe left - scroll down
         window.scrollBy({
           top: window.innerHeight,
           behavior: 'smooth'
         });
       }
       if (touchStart - touchEnd < -75) {
-        // Swipe right - scroll up
         window.scrollBy({
           top: -window.innerHeight,
           behavior: 'smooth'
@@ -84,10 +106,8 @@ const Home = () => {
       }
     };
 
-    // Mouse wheel horizontal to vertical conversion
     const handleWheel = (e) => {
       if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
-        // Horizontal scroll detected - convert to vertical
         e.preventDefault();
         window.scrollBy({
           top: e.deltaX,
@@ -96,22 +116,20 @@ const Home = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('touchstart', handleTouchStart);
     window.addEventListener('touchmove', handleTouchMove);
     window.addEventListener('touchend', handleTouchEnd);
     window.addEventListener('wheel', handleWheel, { passive: false });
-    handleScroll();
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('touchstart', handleTouchStart);
       window.removeEventListener('touchmove', handleTouchMove);
       window.removeEventListener('touchend', handleTouchEnd);
       window.removeEventListener('wheel', handleWheel);
       clearInterval(interval);
+      observer.disconnect();
     };
   }, [touchStart, touchEnd]);
 
@@ -130,20 +148,15 @@ const Home = () => {
     });
   };
 
-  // Animated text variations
   const rotatingTexts = ['Forever Starts Here', 'Love is in the Air', 'Happily Ever After'];
 
   return (
     <div className={styles.home}>
-      {/* Hero Section with Background Image */}
+      {/* Hero Section */}
       <section className={styles.hero} ref={heroRef}>
-        {/* Background Image */}
         <div className={styles.heroBgImage}></div>
-        
-        {/* Dark Overlay for better text visibility */}
         <div className={styles.heroOverlay}></div>
         
-        {/* Animated Particles - White/Gold for visibility */}
         <div className={styles.particles}>
           {particles.map((particle) => (
             <div
@@ -161,7 +174,6 @@ const Home = () => {
           ))}
         </div>
 
-        {/* Floating Rings - White/Gold */}
         <div className={styles.ringsContainer}>
           <div className={styles.ring} style={parallaxStyle}>
             <div className={styles.ringInner}></div>
@@ -180,7 +192,6 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Floating Hearts - Brighter colors for visibility */}
         <div className={styles.floatingHearts}>
           <div className={styles.heart}>❤️</div>
           <div className={styles.heart2}>💕</div>
@@ -190,7 +201,6 @@ const Home = () => {
           <div className={styles.heart6}>❤️‍🔥</div>
         </div>
 
-        {/* Sparkles */}
         <div className={styles.sparkles}>
           <div className={styles.sparkle}>✨</div>
           <div className={styles.sparkle2}>✨</div>
@@ -243,7 +253,7 @@ const Home = () => {
                 <span className={styles.dateMonth}>SEPTEMBER</span>
                 <span className={styles.dateLabel}>MONTH</span>
               </div>
-               <div className={styles.dateDivider}>
+              <div className={styles.dateDivider}>
                 <span>•</span>
               </div>
               <div className={styles.dateCard}>
@@ -253,8 +263,6 @@ const Home = () => {
                 </div>
                 <span className={styles.dateLabel}>DAY</span>
               </div>
-             
-              
               <div className={styles.dateDivider}>
                 <span>•</span>
               </div>
@@ -287,7 +295,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Enhanced Countdown Section */}
+      {/* Countdown Section */}
       <section className={`section ${styles.countdownSection}`}>
         <div className={styles.countdownDecor}>
           <div className={styles.floatingRing}></div>
@@ -296,40 +304,24 @@ const Home = () => {
         </div>
         <div className="container">
           <div className={styles.countdownWrapper}>
-            <motion.span
-              className={styles.sectionTag}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
+            <span className={`${styles.sectionTag} ${styles['scroll-from-left']}`}>
               ✨ THE BIG DAY ✨
-            </motion.span>
-            <motion.h2
-              className={styles.sectionTitle}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
+            </span>
+            <h2 className={`${styles.sectionTitle} ${styles['scroll-from-right']}`}>
               Counting Down to Forever
-            </motion.h2>
-            <CountdownTimer targetDate="2026-09-12T00:00:00" />
+            </h2>
+            <div className={styles['scroll-from-left']}>
+              <CountdownTimer targetDate="2026-09-12T00:00:00" />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Enhanced Welcome Section */}
+      {/* Welcome Section */}
       <section className={`section ${styles.welcomeSection}`}>
         <div className="container">
-          <div className={`${styles.welcomeContent} fade-on-scroll`}>
-            <motion.div
-              className={styles.welcomeText}
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
+          <div className={styles.welcomeContent}>
+            <div className={`${styles.welcomeText} ${styles['scroll-from-left']}`}>
               <div className={styles.welcomeBadge}>✨ Happily Ever After ✨</div>
               <span className={styles.sectionTag}>OUR LOVE STORY</span>
               <h2>Welcome to Our Wedding Journey</h2>
@@ -347,14 +339,8 @@ const Home = () => {
                 <span>With love,</span>
                 <strong>Ifeoma & Kanayo</strong>
               </div>
-            </motion.div>
-            <motion.div
-              className={styles.welcomeImage}
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
+            </div>
+            <div className={`${styles.welcomeImage} ${styles['scroll-from-right']}`}>
               <div className={styles.imageFrame}>
                 <img src={couplePhoto} alt="Ifeoma and Kanayo" className={styles.image} />
                 <div className={styles.frameDecor}></div>
@@ -366,7 +352,7 @@ const Home = () => {
                 <div className={styles.floatingHeart}>💕</div>
                 <div className={styles.floatingHeart}>💫</div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -379,17 +365,12 @@ const Home = () => {
         </div>
         <div className="container">
           <div className={styles.infoHeader}>
-            <span className={styles.sectionTag}>ESSENTIAL DETAILS</span>
-            <h2 className={styles.sectionTitle}>Wedding Essentials</h2>
-            <p className={styles.infoSubtitle}>Everything you need to know for our special day</p>
+            <span className={`${styles.sectionTag} ${styles['scroll-from-left']}`}>ESSENTIAL DETAILS</span>
+            <h2 className={`${styles.sectionTitle} ${styles['scroll-from-right']}`}>Wedding Essentials</h2>
+            <p className={`${styles.infoSubtitle} ${styles['scroll-from-left']}`}>Everything you need to know for our special day</p>
           </div>
           <div className={styles.infoGrid}>
-            {/* Date & Time Card */}
-            <motion.div
-              className={`${styles.infoCard} fade-on-scroll`}
-              whileHover={{ y: -10 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
+            <div className={`${styles.infoCard} ${styles['scroll-from-left']}`}>
               <div className={styles.cardIconWrapper}>
                 <div className={styles.cardIconBg}></div>
                 <div className={styles.cardIcon}>📅</div>
@@ -408,14 +389,9 @@ const Home = () => {
               </div>
               <div className={styles.cardGlow}></div>
               <div className={styles.cardSparkle}>✨</div>
-            </motion.div>
+            </div>
 
-            {/* Venue Card */}
-            <motion.div
-              className={`${styles.infoCard} fade-on-scroll`}
-              whileHover={{ y: -10 }}
-              transition={{ type: "spring", stiffness: 300, delay: 0.1 }}
-            >
+            <div className={`${styles.infoCard} ${styles['scroll-from-right']}`}>
               <div className={styles.cardIconWrapper}>
                 <div className={styles.cardIconBg}></div>
                 <div className={styles.cardIcon}>📍</div>
@@ -440,14 +416,9 @@ const Home = () => {
               </div>
               <div className={styles.cardGlow}></div>
               <div className={styles.cardSparkle}>✨</div>
-            </motion.div>
+            </div>
 
-            {/* Dress Code Card */}
-            <motion.div
-              className={`${styles.infoCard} fade-on-scroll`}
-              whileHover={{ y: -10 }}
-              transition={{ type: "spring", stiffness: 300, delay: 0.2 }}
-            >
+            <div className={`${styles.infoCard} ${styles['scroll-from-left-scale']}`}>
               <div className={styles.cardIconWrapper}>
                 <div className={styles.cardIconBg}></div>
                 <div className={styles.dressCodeIcons}>
@@ -484,7 +455,7 @@ const Home = () => {
               </div>
               <div className={styles.cardGlow}></div>
               <div className={styles.cardSparkle}>✨</div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -492,25 +463,29 @@ const Home = () => {
       {/* Gallery Section */}
       <section className={`section ${styles.gallerySection}`}>
         <div className="container">
-          <span className={styles.sectionTag}>OUR JOURNEY</span>
-          <h2 className={styles.sectionTitle}>Pre-Wedding Moments</h2>
-          <p className={styles.sectionSubtitle}>A glimpse into our love story</p>
-          <Gallery />
+          <span className={`${styles.sectionTag} ${styles['scroll-from-left']}`}>OUR JOURNEY</span>
+          <h2 className={`${styles.sectionTitle} ${styles['scroll-from-right']}`}>Pre-Wedding Moments</h2>
+          <p className={`${styles.sectionSubtitle} ${styles['scroll-from-left']}`}>A glimpse into our love story</p>
+          <div className={styles['scroll-from-left-scale']}>
+            <Gallery />
+          </div>
         </div>
       </section>
 
       {/* Promo Section */}
       <section className={styles.promoSection}>
         <div className="container">
-          <GiftRegistryPromo />
+          <div className={styles['scroll-from-right-rotate']}>
+            <GiftRegistryPromo />
+          </div>
         </div>
       </section>
 
       {/* Venue Section */}
       <section className={`section ${styles.venueSection}`}>
         <div className="container">
-          <div className={`${styles.venueContent} fade-on-scroll`}>
-            <div className={styles.venueInfo}>
+          <div className={styles.venueContent}>
+            <div className={`${styles.venueInfo} ${styles['scroll-from-left']}`}>
               <span className={styles.sectionTag}>LOCATION</span>
               <h2>The Venue</h2>
               <h3>Brick and Ivey</h3>
@@ -532,7 +507,7 @@ const Home = () => {
                 Get Directions
               </a>
             </div>
-            <div className={styles.venueMap}>
+            <div className={`${styles.venueMap} ${styles['scroll-from-right']}`}>
               <iframe
                 title="Venue Map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.1234567890123!2d-84.54345678901234!3d33.95678901234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1234567890abcdef!2sBrick%20and%20Ivey!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
@@ -552,9 +527,9 @@ const Home = () => {
         <div className={styles.ctaPattern}></div>
         <div className="container">
           <div className={styles.ctaContent}>
-            <h2>Save the Date</h2>
-            <p>September 12, 2026</p>
-            <div className={styles.ctaButtons}>
+            <h2 className={styles['scroll-from-left']}>Save the Date</h2>
+            <p className={styles['scroll-from-right']}>September 12, 2026</p>
+            <div className={`${styles.ctaButtons} ${styles['scroll-from-left-scale']}`}>
               <Link to="/rsvp" className="btn btn-primary">
                 RSVP Now
               </Link>

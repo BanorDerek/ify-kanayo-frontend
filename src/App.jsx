@@ -12,7 +12,7 @@ import './styles/global.css';
 import './styles/theme.css';
 
 const Seating = () => <div>Seating Arrangement Page - Coming Soon</div>;
-const Hotels = () => <div>Nearby Hotels Page - Coming Soon</div>;
+const Hotels = () => <div>Waiting for the list of hotels, would update when available </div>;
 
 function App() {
   const [loadingComplete, setLoadingComplete] = useState(false);
